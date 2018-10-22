@@ -36,7 +36,7 @@ class Data:
             self.train_loader = None
         
         if args.data_test in ['Market1501']:
-            module = import_module('data.' + args.data_train.lower())
+            module = import_module('data.' + args.data_test.lower())
             self.testset = getattr(module, args.data_test)(args, test_transform, 'test')
             self.queryset = getattr(module, args.data_test)(args, test_transform, 'query')
 
